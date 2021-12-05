@@ -8,17 +8,6 @@ public class Products {
         public String description;
         public String _id;
 
-        public Products(){
-
-        }
-
-        //For POST and PUT request
-        public Products(String id,String name, String description){
-                setId(id);
-                setName(name);
-                setDescription(description);
-        }
-
         public String getId() {
                 return id;
         }

@@ -1,23 +1,23 @@
 package CreateProducts;
 
 
-import models.Products;
+import Definition.defineProducts;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class createProductsTests {
 
-    @Test
-    public void createProduct(){
-        //String endpoint = System.getProperty("product_endpoint", api_properties.getProperty("product_endpoint"));
-        String endpoint = "http://localhost:3001/product";
-        Products products = new Products(
-                "Original t-shirt",
-                "Adidas Original T-shirt",
-                "This is the new Adidas original t-shirt. It comes in two colors; White and blue"
-        );
+    private defineProducts products = new defineProducts();
+    private String productId = "Original";
+    private String productName = "Adidas Original Tshirt";
+    private String productDescription = "This is the new Adidas original tshirt. It comes in two colors; White and blue";
 
+    @Test
+    public void createProductSuccessfully(){
+        String endpoint = "http://localhost:3001/product";
+
+        products.createProduct(productId,productName, productDescription);
         var response = given().body(products).when().post(endpoint).then();
         response.log().body();
     }
