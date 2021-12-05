@@ -14,7 +14,7 @@ In the framework, the logic is added under main package and tests are added unde
 
 1- createProductsTests.java is used to test creating new product
 2- getProductsTests.java is used to test how to get specific product using its id
-3- updateProductTests.java is used totest the update of specific product using its id
+3- updateProductTests.java is used to test the update of specific product using its id
 4- deleteProductTest.java is used to test how to delete specific product using its id
 
 --------------------------------------------------------------------------------------------------------------------------
