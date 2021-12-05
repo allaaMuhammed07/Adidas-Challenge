@@ -1,16 +1,19 @@
 package UpdateProduct;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import io.restassured.path.json.JsonPath;
 import models.Products;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class updateProductTests {
 
-    private String productId = "groundBoots";
-    private String productName = "ADIPURE FIRM GROUND BOOTS - For Men";
-    private String productDescription = "FINESSE YOUR TOUCH IN THESE LIMITED-COLLECTION BOOTS. Comes in one color";
+    private String productId = "ZipHoodie";
+    private String productName = "THERMAL QUARTER-ZIP HOODIE";
+    private String productDescription = "A COZY HOODED TOP WITH REFLECTIVE 3-STRIPES FOR COLD WEATHER RUNS.";
+    public String createdProduct_id;
 
     @Test
     public void updateProductDescription(){

@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class getProductsTests {
 
-    private String existingProductId = "groundBoots";
+    private String existingProductId = "Original";
     private String notExistingProductId = "dummy";
 
     @Test

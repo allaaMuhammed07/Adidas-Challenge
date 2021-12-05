@@ -7,9 +7,9 @@ import static io.restassured.RestAssured.given;
 
 public class createProductsTests {
 
-    private String productId = "Original";
-    private String productName = "Adidas Original Tshirt";
-    private String productDescription = "This is the new Adidas original tshirt. It comes in two colors; White and blue";
+    private String productId = "ZipHoodie1";
+    private String productName = "ESSENTIALS FRENCH TERRY 3-STRIPES FULL-ZIP HOODIE";
+    private String productDescription = "A COSY HOODIE FOR POST-WORKOUT HANGS - For Women";
 
     @Test
     public void createProductSuccessfully(){
@@ -18,5 +18,6 @@ public class createProductsTests {
         Products products = new Products(productId,productName, productDescription);
         var response = given().body(products).when().post(endpoint).then();
         response.log().body();
+
     }
 }

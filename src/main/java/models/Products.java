@@ -3,15 +3,27 @@ package models;
 public class Products {
 
         //Serialized object form of the request body
-        public String id;
-        public String name;
-        public String description;
-        public String _id;
+        private String id;
+        private String name;
+        private String description;
+        private String _id;
+        private String currency;
+        private String price;
 
         public Products(String id, String name, String description){
                 setId(id);
                 setName(name);
                 setDescription(description);
+        }
+
+        //Used in case deserialization
+        public Products(String id, String name, String description, String _id, String currency, String price){
+                setId(id);
+                setName(name);
+                setDescription(description);
+                set_id(_id);
+                setCurrency(currency);
+                setPrice(price);
         }
 
         public String getId() {
@@ -44,5 +56,21 @@ public class Products {
 
         public void set_id(String _id) {
                 this._id = _id;
+        }
+
+        public String getCurrency() {
+                return currency;
+        }
+
+        public void setCurrency(String currency) {
+                this.currency = currency;
+        }
+
+        public String getPrice() {
+                return price;
+        }
+
+        public void setPrice(String price) {
+                this.price = price;
         }
 }
