@@ -8,6 +8,12 @@ public class Products {
         public String description;
         public String _id;
 
+        public Products(String id, String name, String description){
+                setId(id);
+                setName(name);
+                setDescription(description);
+        }
+
         public String getId() {
                 return id;
         }

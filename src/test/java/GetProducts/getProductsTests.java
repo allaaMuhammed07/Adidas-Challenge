@@ -1,4 +1,4 @@
-package getProducts;
+package GetProducts;
 
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class getProductsTests {
 
-    private String existingProductId = "Original";
+    private String existingProductId = "groundBoots";
     private String notExistingProductId = "dummy";
 
     @Test
@@ -21,6 +21,7 @@ public class getProductsTests {
 
         response.assertThat().body("currency", equalTo("$"));
         System.out.println("Test Passed !!");
+
     }
 
     @Test

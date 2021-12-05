@@ -1,14 +1,12 @@
 package CreateProducts;
 
-
-import Definition.defineProducts;
+import models.Products;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class createProductsTests {
 
-    private defineProducts products = new defineProducts();
     private String productId = "Original";
     private String productName = "Adidas Original Tshirt";
     private String productDescription = "This is the new Adidas original tshirt. It comes in two colors; White and blue";
@@ -17,7 +15,7 @@ public class createProductsTests {
     public void createProductSuccessfully(){
         String endpoint = "http://localhost:3001/product";
 
-        products.createProduct(productId,productName, productDescription);
+        Products products = new Products(productId,productName, productDescription);
         var response = given().body(products).when().post(endpoint).then();
         response.log().body();
     }
